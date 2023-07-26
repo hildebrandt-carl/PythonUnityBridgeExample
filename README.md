@@ -2,7 +2,7 @@
 
 This project provides an implementation of a TCP server in Unity3D and a TCP client in Python. The purpose of this system is to facilitate real-time control of Unity GameObjects from an external Python script.
 
-![Example](example.git)
+![Example](example.gif)
 
 ## Description
 
