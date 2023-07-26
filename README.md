@@ -19,7 +19,7 @@ Please refer to the provided examples to understand how to use and implement thi
 To run this code load the unity project and hit play.
 
 Then run the python in the `Python` folder using:
-```python
+```
 python3 TCPClient.py # For Ubuntu
 python .\TCPClient.py # For Windows
 ```
