@@ -25,8 +25,8 @@ Simply import the Unity project provided in this repository and you'll find the 
 ### Option 2: Creating a New 3D Unity Project
 
 1. Create a new 3D Unity project.
-2. Import the script "TCPServer.py" located in the `Unity` folder.
-3. Attach the `TCPServer.py`` script to any GameObject in your scene.
+2. Import the script `TCPServer.py` located in the `Unity` folder.
+3. Attach the `TCPServer.py` script to any GameObject in your scene.
 
 ## Controlling GameObjects in Unity
 
