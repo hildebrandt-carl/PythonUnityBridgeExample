@@ -14,15 +14,60 @@ While the Unity server runs on a separate thread to keep the main game loop resp
 
 Please refer to the provided examples to understand how to use and implement this system in your own Unity projects. Feedback and contributions are welcomed!
 
-## Running the Code
+## Unity Setup
 
-To run this code load the unity project and hit play.
+You can either use the given Unity project or create a new 3D Unity project for the integration.
 
-Then run the python in the `Python` folder using:
-```
+### Option 1: Importing the Provided Unity Project
+
+Simply import the Unity project provided in this repository and you'll find the script "TCPServer.py" attached to a GameObject in the scene.
+
+### Option 2: Creating a New 3D Unity Project
+
+1. Create a new 3D Unity project.
+2. Import the script "TCPServer.py" located in the `Unity` folder.
+3. Attach the `TCPServer.py`` script to any GameObject in your scene.
+
+## Controlling GameObjects in Unity
+
+You can control the position and rotation of GameObjects in Unity through two methods: using a basic Python script or a [ROS (Robot Operating System)](https://www.ros.org/) node. ROS is a middleware framework used to develop robotic applications, allowing for communication between various software components.
+
+### Option 1: Using Basic Python Script
+
+Load the Unity project and hit play. Then run the Python code in the `Python` folder using:
+```bash
 python3 TCPClient.py # For Ubuntu
 python .\TCPClient.py # For Windows
 ```
 
-Note the default IP address is set to `127.0.0.1` however, I have tested running the client and server on different machines within the same network. Just change the IP address in both the server and client script and you will be good to go.
+The Python client will send a series of coordinates and quaternions to Unity, allowing you to control the GameObject's position and rotation.
+
+The final result will look as follows:
+
+![Example](example_python.gif)
+
+### Option 2: Using ROS Node
+
+Compile the ROS workspace in the `ROS_ws` folder using the following command:
+```bash
+cd ROS_ws
+catkin_make # OR
+catkin build
+```
+
+Next, run the code using the `unity_connection.launch`` file:
+```bash
+source devel/setup.bash
+roslaunch ROS_ws unity_connection.launch topic:="/vicon/FDE2DO/FDE2D0"
+```
+
+This launch file will run the ROS node, enabling communication with Unity, and launch a bag file (which has recorded a topic `/vicon/FDE2DO/FDE2D0`) with a set of pre-recorded positions that will be forwarded to Unity, controlling the GameObject's position and rotation.
+
+The final result will look as follows:
+
+![Example](example_ros.gif)
+
+## Misc
+
+Note: the default IP address is set to `127.0.0.1`. However, I have tested running the client and server on different machines within the same network. Just change the IP address in both the server and client script, and you will be good to go.
 
