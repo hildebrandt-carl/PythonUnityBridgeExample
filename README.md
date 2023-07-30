@@ -20,7 +20,7 @@ You can either use the given Unity project or create a new 3D Unity project for 
 
 ### Option 1: Importing the Provided Unity Project
 
-Simply import the Unity project provided in this repository and you'll find the script "TCPServer.py" attached to a GameObject in the scene.
+Simply import the Unity project provided in this repository and you'll find the script `TCPServer.py` attached to a GameObject in the scene.
 
 ### Option 2: Creating a New 3D Unity Project
 
@@ -55,7 +55,7 @@ catkin_make # OR
 catkin build
 ```
 
-Next, run the code using the `unity_connection.launch`` file:
+Next, run the code using the `unity_connection.launch` file:
 ```bash
 source devel/setup.bash
 roslaunch ROS_ws unity_connection.launch topic:="/vicon/FDE2DO/FDE2D0"
